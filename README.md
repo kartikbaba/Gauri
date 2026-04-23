@@ -9,3 +9,7 @@
 ---
 
 [**Something for you**](https://kartikbaba.github.io/See-you-soon/something-for-you.pdf) <sub style="color: gray;"><small>11 April 2026</small></sub>
+
+---
+
+[**All the Best**](https://kartikbaba.github.io/all-the-best/) <sub style="color: gray;"><small>23 April 2026</small></sub>
