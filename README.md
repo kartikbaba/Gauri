@@ -13,3 +13,7 @@
 ---
 
 [**All the Best**](https://kartikbaba.github.io/all-the-best/) <sub style="color: gray;"><small>23 April 2026</small></sub>
+
+---
+
+[**Missing Me**](https://kartikbaba.github.io/periods-pain/missing-me) <sub style="color: gray;"><small>26 May 2026</small></sub>
