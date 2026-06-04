@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: #0d0812;
+    overflow-x: hidden;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stars {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    animation: twinkle var(--d) ease-in-out infinite alternate;
+  }
+
+  @keyframes twinkle {
+    from { opacity: 0.1; transform: scale(0.8); }
+    to { opacity: var(--op); transform: scale(1.2); }
+  }
+
+  .nebula {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .nebula-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+    animation: drift 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift {
+    from { transform: translateY(0px) scale(1); }
+    to { transform: translateY(-20px) scale(1.05); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 400px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .petals-top {
+    position: relative;
+    height: 120px;
+    width: 200px;
+    margin-bottom: 1.5rem;
+  }
+
+  .petal {
+    position: absolute;
+    animation: petalFloat var(--pd) ease-in-out infinite alternate;
+  }
+
+  @keyframes petalFloat {
+    from { transform: translateY(0) rotate(var(--pr)); }
+    to { transform: translateY(-8px) rotate(calc(var(--pr) + 8deg)); }
+  }
+
+  .petal svg {
+    filter: drop-shadow(0 2px 8px rgba(220, 80, 130, 0.4));
+  }
+
+  .heart-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .heart-svg {
+    animation: heartbeat 1.4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(220, 80, 130, 0.6));
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.08); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.05); }
+    70% { transform: scale(1); }
+  }
+
+  .rings {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(220, 80, 130, 0.3);
+    animation: expandRing var(--rd) ease-out infinite;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes expandRing {
+    0% { width: 60px; height: 60px; opacity: 0.6; }
+    100% { width: 160px; height: 160px; opacity: 0; }
+  }
+
+  .to-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: rgba(220, 150, 170, 0.7);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 10vw, 4rem);
+    font-style: italic;
+    font-weight: 400;
+    background: linear-gradient(135deg, #f7b8d0 0%, #e8709a 40%, #c94b7b 70%, #f7b8d0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    animation: shimmer 3s ease-in-out infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .message-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 0.5px solid rgba(220, 100, 150, 0.25);
+    border-radius: 20px;
+    padding: 2rem 1.8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+  }
+
+  .message-card::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: rgba(220, 80, 130, 0.15);
+    line-height: 1;
+    font-style: italic;
+  }
+
+  .message-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: rgba(245, 215, 228, 0.85);
+    font-weight: 300;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  .love-statement {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .love-from {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: rgba(220, 150, 170, 0.5);
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 0.3rem;
+  }
+
+  .iloveyou {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    font-style: italic;
+    color: rgba(247, 190, 215, 0.95);
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 30px rgba(220, 80, 130, 0.4);
+    animation: glow 2.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 20px rgba(220, 80, 130, 0.3); }
+    to { text-shadow: 0 0 40px rgba(220, 80, 130, 0.7), 0 0 60px rgba(180, 60, 110, 0.3); }
+  }
+
+  .dots-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+
+  .dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: rgba(220, 100, 150, 0.5);
+  }
+
+  .dot.big {
+    width: 6px; height: 6px;
+    background: rgba(220, 100, 150, 0.8);
+  }
+
+  .sparkle {
+    position: absolute;
+    pointer-events: none;
+    animation: sparkleAnim var(--sd) ease-in-out infinite;
+  }
+
+  @keyframes sparkleAnim {
+    0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  }
+
+  .falling-petal {
+    position: fixed;
+    top: -30px;
+    pointer-events: none;
+    z-index: 5;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0.8; }
+    100% { transform: translateY(100vh) rotate(360deg) translateX(30px); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="nebula">
+  <div class="nebula-blob" style="width:300px;height:300px;background:#9b2060;top:-50px;left:-80px;animation-delay:0s;"></div>
+  <div class="nebula-blob" style="width:250px;height:250px;background:#5b1060;top:40%;right:-60px;animation-delay:3s;animation-duration:15s;"></div>
+  <div class="nebula-blob" style="width:200px;height:200px;background:#b03070;bottom:0;left:20%;animation-delay:6s;animation-duration:18s;"></div>
+</div>
+
+<div class="container">
+
+  <div class="petals-top" id="petals-top"></div>
+
+  <div class="heart-container">
+    <div class="rings">
+      <div class="ring" style="--rd: 2s; animation-delay: 0s;"></div>
+      <div class="ring" style="--rd: 2s; animation-delay: 0.7s;"></div>
+      <div class="ring" style="--rd: 2s; animation-delay: 1.4s;"></div>
+    </div>
+    <svg class="heart-svg" width="80" height="74" viewBox="0 0 80 74" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#f4a0c0"/>
+          <stop offset="50%" style="stop-color:#e0587a"/>
+          <stop offset="100%" style="stop-color:#c43b6e"/>
+        </linearGradient>
+      </defs>
+      <path d="M40 68 C40 68 5 44 5 22 C5 11 13 4 22 4 C29 4 36 8 40 14 C44 8 51 4 58 4 C67 4 75 11 75 22 C75 44 40 68 40 68Z" fill="url(#hg)"/>
+      <path d="M18 16 C18 16 14 24 16 32" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <p class="to-label">for my love</p>
+
+  <h1 class="name">Gauri</h1>
+
+  <div class="message-card">
+    <p class="message-line">
+      In every sunrise I see your smile,<br>
+      in every star, the light of your eyes.<br>
+      You are my favourite feeling,<br>
+      my quietest joy, my deepest home.
+    </p>
+  </div>
+
+  <div class="dots-row">
+    <div class="dot"></div>
+    <div class="dot big"></div>
+    <div class="dot"></div>
+  </div>
+
+  <div class="love-statement">
+    <p class="love-from">always & forever</p>
+    <p class="iloveyou">I Love You ♡</p>
+  </div>
+
+  <div class="dots-row">
+    <div class="dot"></div>
+    <div class="dot big"></div>
+    <div class="dot"></div>
+  </div>
+
+</div>
+
+<script>
+const starsEl = document.getElementById('stars');
+for (let i = 0; i < 90; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  const size = Math.random() * 2.5 + 0.5;
+  const op = (Math.random() * 0.5 + 0.3).toFixed(2);
+  const dur = (Math.random() * 3 + 2).toFixed(1) + 's';
+  s.style.cssText = `
+    width:${size}px;height:${size}px;
+    top:${Math.random()*100}%;
+    left:${Math.random()*100}%;
+    --d:${dur};--op:${op};
+    animation-delay:${(Math.random()*4).toFixed(1)}s;
+  `;
+  starsEl.appendChild(s);
+}
+
+const petalsTop = document.getElementById('petals-top');
+const petalPositions = [
+  {x:20,y:60,r:'-20deg',s:0.7,d:'3s'},
+  {x:60,y:30,r:'10deg',s:1,d:'2.5s'},
+  {x:100,y:55,r:'-5deg',s:0.85,d:'3.5s'},
+  {x:140,y:25,r:'15deg',s:0.9,d:'2.8s'},
+  {x:175,y:60,r:'-25deg',s:0.75,d:'3.2s'},
+];
+
+petalPositions.forEach(p => {
+  const el = document.createElement('div');
+  el.className = 'petal';
+  el.style.cssText = `left:${p.x}px;top:${p.y}px;--pr:${p.r};--pd:${p.d};transform:scale(${p.s}) rotate(${p.r});animation-delay:${Math.random().toFixed(1)}s;`;
+  el.innerHTML = `<svg width="28" height="32" viewBox="0 0 28 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14 2 C14 2 26 10 26 20 C26 27 20 30 14 30 C8 30 2 27 2 20 C2 10 14 2 14 2Z" fill="#e8709a" opacity="0.85"/>
+    <path d="M14 6 C14 6 12 14 14 24" stroke="rgba(255,200,220,0.5)" stroke-width="0.8" fill="none"/>
+  </svg>`;
+  petalsTop.appendChild(el);
+});
+
+function spawnFallingPetal() {
+  const p = document.createElement('div');
+  p.className = 'falling-petal';
+  const x = Math.random() * 100;
+  const dur = (Math.random() * 5 + 6).toFixed(1);
+  const s = Math.random() * 0.5 + 0.5;
+  p.style.cssText = `left:${x}%;animation-duration:${dur}s;animation-delay:${(Math.random()*3).toFixed(1)}s;transform:scale(${s});`;
+  p.innerHTML = `<svg width="16" height="18" viewBox="0 0 28 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14 2 C14 2 26 10 26 20 C26 27 20 30 14 30 C8 30 2 27 2 20 C2 10 14 2 14 2Z" fill="#e8709a" opacity="0.7"/>
+  </svg>`;
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), parseFloat(dur) * 1000 + 3000);
+}
+
+for (let i = 0; i < 8; i++) {
+  setTimeout(spawnFallingPetal, i * 900);
+}
+setInterval(spawnFallingPetal, 1200);
+</script>
+</body>
+</html>
