@@ -1,281 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <meta name="theme-color" content="#ffd6e8"/>
-  <title>For My Princess Gauri 🌸</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff3f6">
+  <title>Hi beautiful Gauri 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    :root {
+      --ink: #492b3b;
+      --muted: #927383;
+      --rose: #d96b91;
+      --rose-dark: #a8446b;
+      --line: rgba(168, 68, 107, .13);
+      --glass: rgba(255,255,255,.78);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
+      margin: 0;
       min-height: 100vh;
-      background: linear-gradient(160deg, #fff0f5 0%, #ffe4f0 50%, #ffd6e8 100%);
-      font-family: 'Nunito', sans-serif;
-      padding: 28px 16px 56px;
-      position: relative;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(255,190,211,.48), transparent 34%),
+        radial-gradient(ellipse at 92% 22%, rgba(255,220,202,.62), transparent 30%),
+        linear-gradient(145deg, #fff8f7 0%, #fff0f4 48%, #fce8ef 100%);
       overflow-x: hidden;
-      -webkit-tap-highlight-color: transparent;
     }
-
-    .petal {
-      position: fixed;
-      border-radius: 50% 0 50% 0;
-      opacity: 0.22;
-      animation: fall linear infinite;
-      pointer-events: none;
-      z-index: 0;
+    .glow {
+      position: fixed; width: 340px; height: 340px; border-radius: 50%;
+      filter: blur(75px); opacity: .3; pointer-events: none; z-index: 0;
+      background: #f6a9c4; top: 48%; left: -190px;
     }
-
-    @keyframes fall {
-      0%   { transform: translateY(-30px) rotate(0deg);   opacity: 0.3; }
-      100% { transform: translateY(110vh)  rotate(360deg); opacity: 0;   }
+    .glow.two { background: #f6d7a9; top: 8%; left: auto; right: -210px; }
+    .wrap { position: relative; z-index: 1; width: min(1060px, calc(100% - 36px)); margin: auto; padding: 58px 0 38px; }
+    header { text-align: center; padding: 20px 12px 38px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; padding: 8px 15px;
+      border: 1px solid var(--line); border-radius: 99px; background: rgba(255,255,255,.58);
+      color: var(--rose-dark); font-size: 11px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase;
     }
-
-    .crown {
-      text-align: center;
-      font-size: 48px;
-      margin-bottom: 6px;
-      animation: bop 2s ease-in-out infinite;
-      position: relative; z-index: 1;
+    h1 {
+      margin: 22px 0 10px; font: 500 clamp(2.7rem, 7vw, 5.3rem)/1.08 "Playfair Display", Georgia, serif;
+      letter-spacing: -.045em; color: #713c58;
     }
-
-    @keyframes bop {
-      0%, 100% { transform: translateY(0);    }
-      50%       { transform: translateY(-7px); }
-    }
-
-    .badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #f472b6, #ec4899);
-      color: #fff;
-      font-family: 'Dancing Script', cursive;
-      font-size: 18px;
-      font-weight: 700;
-      padding: 5px 22px;
-      border-radius: 50px;
-      margin-bottom: 6px;
-      position: relative; z-index: 1;
-    }
-
-    .title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.6rem;
-      font-weight: 700;
-      color: #c0326a;
-      text-align: center;
-      line-height: 1.2;
-      margin-bottom: 4px;
-      text-shadow: 1px 1px 0 #f9b8d0;
-      position: relative; z-index: 1;
-    }
-
-    .sub {
-      text-align: center;
-      font-size: 12px;
-      color: #e05a8a;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-      position: relative; z-index: 1;
-    }
-
+    h1 em { color: var(--rose); font-weight: 500; }
+    .subtitle { margin: 0 auto; max-width: 510px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .tiny-hearts { margin-top: 22px; letter-spacing: 10px; color: #e58aaa; font-size: 17px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin: 0 2px 18px; }
+    .section-head h2 { margin: 0; font: 500 1.55rem "Playfair Display", Georgia, serif; color: #713c58; }
+    .section-head span { color: #aa8295; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .card {
-      background: rgba(255,255,255,0.85);
-      border-radius: 20px;
-      border: 1.5px solid rgba(255,170,200,0.5);
-      padding: 20px 18px;
-      margin-bottom: 14px;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
+      --accent: #d96b91;
+      position: relative; display: flex; flex-direction: column; min-height: 218px;
+      padding: 22px; border: 1px solid rgba(168,68,107,.14); border-radius: 23px;
+      background: var(--glass); backdrop-filter: blur(14px);
+      box-shadow: 0 12px 34px rgba(117,57,83,.07);
+      text-decoration: none; color: inherit; overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      isolation: isolate;
     }
-
     .card::before {
-      content: '';
-      position: absolute;
-      top: -1px; left: -1px; right: -1px;
-      height: 4px;
-      background: linear-gradient(90deg, #f9a8d4, #f472b6, #e879a0, #f472b6, #f9a8d4);
-      border-radius: 20px 20px 0 0;
+      content: ""; position: absolute; z-index: -1; width: 150px; height: 150px; right: -58px; top: -65px;
+      border-radius: 50%; background: var(--accent); opacity: .10; transition: transform .3s ease;
     }
-
-    .ico    { font-size: 28px; display: block; text-align: center; margin-bottom: 6px; }
-    .ctitle { font-family: 'Dancing Script', cursive; font-size: 1.45rem; font-weight: 700; color: #c0326a; text-align: center; margin-bottom: 10px; }
-    .ctext  { font-size: 15px; color: #6b3a55; text-align: center; line-height: 1.85; }
-    .ctext em { font-style: normal; font-weight: 600; color: #c0326a; }
-
-    .bigmsg {
-      background: linear-gradient(135deg, #fdf2f8, #fce7f3);
-      border-radius: 20px;
-      border: 1.5px solid #f9a8d4;
-      padding: 22px 18px;
-      margin-bottom: 14px;
-      text-align: center;
-      position: relative; z-index: 1;
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 42px rgba(117,57,83,.13); border-color: rgba(168,68,107,.3); }
+    .card:hover::before { transform: scale(1.35); }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .emoji {
+      display: grid; place-items: center; width: 49px; height: 49px; border-radius: 16px;
+      background: color-mix(in srgb, var(--accent) 13%, white); font-size: 25px;
     }
-
-    .quote { font-family: 'Dancing Script', cursive; font-size: 1.35rem; color: #9d174d; line-height: 1.55; margin-bottom: 10px; }
-    .from  { font-size: 13px; color: #e05a8a; font-weight: 600; letter-spacing: 0.04em; }
-
-    .chips {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 4px 0 14px;
-      position: relative; z-index: 1;
+    .date { color: #a17d8e; font-size: 11px; font-weight: 600; letter-spacing: .045em; text-align: right; }
+    .card h3 { margin: 23px 0 7px; font: 500 1.42rem "Playfair Display", Georgia, serif; color: #713c58; }
+    .desc { margin: 0; color: #927383; font-size: 13px; line-height: 1.65; }
+    .open { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 20px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+    .arrow { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 12%, white); transition: transform .2s; }
+    .card:hover .arrow { transform: translateX(4px); }
+    .note {
+      margin: 28px auto 0; max-width: 680px; padding: 18px 22px; border: 1px solid var(--line);
+      border-radius: 18px; background: rgba(255,255,255,.48); text-align: center;
+      color: #987789; font: italic 1.05rem "Playfair Display", Georgia, serif; line-height: 1.7;
     }
-
-    .chip {
-      background: linear-gradient(135deg, #fce7f3, #fbd0e8);
-      border: 1px solid #f9a8d4;
-      border-radius: 50px;
-      padding: 8px 16px;
-      font-size: 13px;
-      color: #be185d;
-      font-weight: 600;
+    footer { text-align: center; padding: 34px 0 4px; color: #b18b9e; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    footer span { color: var(--rose); }
+    @media (max-width: 820px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 540px) {
+      .wrap { width: min(100% - 28px, 430px); padding-top: 30px; }
+      header { padding-bottom: 30px; }
+      .grid { grid-template-columns: 1fr; gap: 12px; }
+      .card { min-height: 190px; padding: 20px; }
+      .card h3 { margin-top: 17px; }
+      .section-head { align-items: center; }
+      .section-head span { font-size: 10px; }
     }
-
-    .remedies {
-      background: rgba(255,255,255,0.8);
-      border-radius: 20px;
-      border: 1.5px solid rgba(255,170,200,0.4);
-      padding: 18px;
-      margin-bottom: 14px;
-      position: relative; z-index: 1;
-    }
-
-    .rtitle { font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: #c0326a; text-align: center; margin-bottom: 12px; font-weight: 700; }
-
-    .rgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-
-    .ritem {
-      background: #fff0f7;
-      border-radius: 12px;
-      padding: 11px 10px;
-      font-size: 14px;
-      color: #7c3f60;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-weight: 500;
-      line-height: 1.3;
-    }
-
-    .rico { font-size: 18px; flex-shrink: 0; }
-
-    .pink-card { background: linear-gradient(135deg, rgba(253,242,248,0.9), rgba(252,231,243,0.9)); }
-
-    .footer {
-      text-align: center;
-      font-size: 26px;
-      margin-top: 28px;
-      letter-spacing: 5px;
-      animation: pulse 1.5s ease-in-out infinite;
-      position: relative; z-index: 1;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1);    }
-      50%       { transform: scale(1.14); }
-    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
   </style>
 </head>
 <body>
+  <div class="glow"></div><div class="glow two"></div>
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">♡ A little corner of the internet, just for you ♡</div>
+      <h1>Hi beautiful <em>Gauri</em>,<br>what you wanna see?</h1>
+      <p class="subtitle">A few little moments, wishes and words made with love. Pick whichever one your heart feels like opening. 💗</p>
+      <div class="tiny-hearts" aria-hidden="true">♡ ✧ ♡</div>
+    </header>
 
-  <div class="crown">👑</div>
-  <div style="text-align:center; margin-bottom:4px;">
-    <span class="badge">Princess Gauri</span>
-  </div>
-  <div class="title">This page is<br>for you 🌸</div>
-  <div class="sub">Just for the girl who rules my heart</div>
+    <section aria-label="Your pages">
+      <div class="section-head">
+        <h2>Your little collection</h2>
+        <span>9 pages · all yours</span>
+      </div>
+      <div class="grid">
+        <a class="card" href="all_the_best.html" style="--accent:#8d8bd8">
+          <div class="card-top"><span class="emoji">🌟</span><span class="date">Thu, Apr 23 · 10:15 PM</span></div>
+          <h3>All the Best</h3>
+          <p class="desc">A little good-luck note to remind you how amazing you are.</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+        </a>
 
-  <div class="card">
-    <span class="ico">🌺</span>
-    <div class="ctitle">Hey beautiful...</div>
-    <div class="ctext">
-      I know today is hard and your body is being mean to you.<br><br>
-      But even on your worst days, you are <em>the most beautiful soul</em> I have ever known.
-      You handle pain with a grace that makes me love you even more. 🥺
-    </div>
-  </div>
+        <a class="card" href="i_love_you_gauri.html" style="--accent:#d96b91">
+          <div class="card-top"><span class="emoji">💌</span><span class="date">Fri, Jun 5 · 1:12 AM</span></div>
+          <h3>I Love You, Gauri</h3>
+          <p class="desc">A soft little reminder of just how much you mean to me.</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+        </a>
 
-  <div class="bigmsg">
-    <div class="quote">"You are not just my girlfriend — you are my home, my peace, and my favourite person in this entire universe. I love you more than words can hold."</div>
-    <div class="from">— Yours, always 💗</div>
-  </div>
+        <a class="card" href="missing-me.html" style="--accent:#d58a9f">
+          <div class="card-top"><span class="emoji">🥺</span><span class="date">26 May 2026</span></div>
+          <h3>Missing Me</h3>
+          <p class="desc">For the moments when you wish I were right there beside you.</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+        </a>
 
-  <div class="card">
-    <span class="ico">💫</span>
-    <div class="ctitle">You deserve the whole world</div>
-    <div class="ctext">
-      Warm hugs, hot chocolate, your favourite show, zero responsibilities, and
-      <em>someone who loves you endlessly</em> — that's everything I wish I could give you right now.<br><br>
-      Please rest, my love. 🛌
-    </div>
-  </div>
+        <a class="card" href="for_my_princess.html" style="--accent:#e58aaa">
+          <div class="card-top"><span class="emoji">👑</span><span class="date">9 May</span></div>
+          <h3>For My Princess</h3>
+          <p class="desc">A page made for my favourite girl, my princess Gauri. 🌸</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+        </a>
 
-  <div class="chips">
-    <div class="chip">My princess 👑</div>
-    <div class="chip">My everything 💕</div>
-    <div class="chip">My Gauri 🌸</div>
-  </div>
+        <a class="card" href="My11_11.html" style="--accent:#c5a15e">
+          <div class="card-top"><span class="emoji">✨</span><span class="date">Mon, 11 Nov 2026</span></div>
+          <h3>My 11:11 Wish</h3>
+          <p class="desc">A morning wish, with one very special person in it.</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+        </a>
 
-  <div class="card">
-    <span class="ico">💌</span>
-    <div class="ctitle">Things I love about you</div>
-    <div class="ctext">
-      ✨ Your smile that lights up any room<br>
-      ✨ The way you laugh at your own jokes<br>
-      ✨ How strong you are, even when it's tough<br>
-      ✨ Your kind, warm, magical heart<br>
-      ✨ <em>Just the way you exist</em> — perfectly you
-    </div>
-  </div>
+        <a class="card" href="My11_11_night.html" style="--accent:#7888c8">
+          <div class="card-top"><span class="emoji">🌙</span><span class="date">Mon, 11 Nov 2026 · Night</span></div>
+          <h3>My 11:11 Night Wish</h3>
+          <p class="desc">A little midnight magic, and a wish that will always be you.</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+        </a>
+      
+      <a class="card" href="https://kartikbaba.github.io/will-you-be-mine/" target="_blank" rel="noopener noreferrer" style="--accent:#d96b91">
+          <div class="card-top"><span class="emoji">💍</span><span class="date">20 March 2026</span></div>
+          <h3>Will you be Mine</h3>
+          <p class="desc">A little question, with a lot of meaning.</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+      </a>
 
-  <div class="remedies">
-    <div class="rtitle">🍵 A little care kit — from me to you</div>
-    <div class="rgrid">
-      <div class="ritem"><span class="rico">🌡️</span>Heating pad on tummy</div>
-      <div class="ritem"><span class="rico">🍫</span>Dark chocolate, please</div>
-      <div class="ritem"><span class="rico">🫖</span>Ginger or chamomile tea</div>
-      <div class="ritem"><span class="rico">🛏️</span>Rest, rest &amp; more rest</div>
-      <div class="ritem"><span class="rico">💧</span>Stay hydrated, love</div>
-      <div class="ritem"><span class="rico">🤗</span>Imagine my hugs ♾️</div>
-    </div>
-  </div>
+      <a class="card" href="https://kartikbaba.github.io/See-you-soon/" target="_blank" rel="noopener noreferrer" style="--accent:#d58a9f">
+          <div class="card-top"><span class="emoji">🫶</span><span class="date">29 March 2026</span></div>
+          <h3>See you soon</h3>
+          <p class="desc">For the moments until we meet again.</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+      </a>
 
-  <div class="card pink-card">
-    <span class="ico">🩷</span>
-    <div class="ctitle">Last thing, I promise...</div>
-    <div class="ctext">
-      No matter how many miles, how many bad days, or how much pain —<br><br>
-      <em>I will always choose you.</em><br><br>
-      Every single time. Without a second thought.<br>
-      You are my princess, my Gauri, and the love of my life. 🌹
-    </div>
-  </div>
+      <a class="card" href="https://kartikbaba.github.io/See-you-soon/something-for-you.pdf" target="_blank" rel="noopener noreferrer" style="--accent:#c5a15e">
+          <div class="card-top"><span class="emoji">🎁</span><span class="date">11 April 2026</span></div>
+          <h3>Something for you</h3>
+          <p class="desc">A small surprise, made just for you.</p>
+          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+      </a>
+</div>
+    </section>
 
-  <div class="footer">🌸 💗 👑 💗 🌸</div>
-
-  <script>
-    const cols = ['#f9a8d4','#f472b6','#ec4899','#fda4af','#fb7185'];
-    for (let i = 0; i < 16; i++) {
-      const p = document.createElement('div');
-      p.className = 'petal';
-      p.style.left              = Math.random() * 100 + '%';
-      p.style.top               = Math.random() * -150 + 'px';
-      p.style.width             = (8  + Math.random() * 9)  + 'px';
-      p.style.height            = (11 + Math.random() * 11) + 'px';
-      p.style.background        = cols[Math.floor(Math.random() * cols.length)];
-      p.style.animationDuration = (4  + Math.random() * 6)  + 's';
-      p.style.animationDelay    = (Math.random() * 5)        + 's';
-      p.style.transform         = 'rotate(' + Math.random() * 360 + 'deg)';
-      document.body.appendChild(p);
-    }
-  </script>
+    <div class="note">“Some things are too lovely to keep in just one message… so I made you a little place for them.” 💗</div>
+    <footer>Made with <span>♥</span> · Always yours</footer>
+  </main>
 </body>
 </html>

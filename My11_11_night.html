@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gauri, my night 11:11 wish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --night:#070b1f; --navy:#16224f; --silver:#e6ebff; --rose:#f4b8c8; --gold:#f6d99b; --mist:#9fb0e0;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0;min-height:100vh;color:var(--silver);font-family:var(--sans);overflow-x:hidden;
+  background:radial-gradient(130% 70% at 50% 0%,var(--navy) 0%,var(--night) 65%) fixed,var(--night);
+}
+#sky{position:fixed;inset:0;pointer-events:none;z-index:0}
+#sky i{position:absolute;border-radius:50%;background:var(--silver);opacity:.2;animation:tw 5s ease-in-out infinite}
+@keyframes tw{50%{opacity:.95}}
+main{position:relative;z-index:1}
+.hero{min-height:94vh;min-height:94svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.25rem}
+.moon{
+  width:64px;height:64px;border-radius:50%;margin-bottom:1.6rem;
+  box-shadow:inset -22px 6px 0 0 var(--gold);
+  filter:drop-shadow(0 0 14px rgba(246,217,155,.55));
+  transform:rotate(-18deg);
+}
+.intro{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.25rem,4.5vw,1.7rem);color:var(--mist);margin:0 0 .4rem}
+.clock{
+  font-family:var(--serif);font-weight:300;line-height:1;margin:0;
+  font-size:clamp(5.2rem,27vw,13rem);letter-spacing:.02em;
+  color:var(--silver);text-shadow:0 0 .4em rgba(159,176,224,.35);
+  transition:color 1.2s,text-shadow 1.2s;
+}
+.clock .c{display:inline-block;animation:blink 2.4s ease-in-out infinite;position:relative;top:-.05em}
+@keyframes blink{50%{opacity:.25}}
+.granted .clock{color:var(--gold);text-shadow:0 0 .3em rgba(246,217,155,.65),0 0 1em rgba(244,184,200,.35)}
+.granted .clock .c{animation:none;opacity:1}
+.wish{
+  margin-top:2rem;font:600 1rem var(--sans);color:var(--silver);background:rgba(244,184,200,.12);
+  border:1px solid var(--rose);border-radius:999px;padding:.95rem 2.2rem;cursor:pointer;min-height:48px;
+  transition:background .3s,transform .2s;
+}
+.wish:hover{background:rgba(244,184,200,.25)}
+.wish:active{transform:scale(.97)}
+.wish:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.hint{font-size:.9rem;color:var(--mist);margin:1rem 0 0;font-weight:300}
+.granted .wish,.granted .hint{display:none}
+.letter{max-width:34rem;margin:0 auto;padding:1rem 1.6rem 6rem}
+.letter[hidden]{display:none}
+.letter p{
+  font-family:var(--serif);font-weight:500;font-size:clamp(1.3rem,5vw,1.5rem);line-height:1.65;
+  margin:0 0 1.7rem;color:var(--silver);
+}
+.letter .to{font-size:clamp(2.2rem,9vw,3.2rem);font-weight:500;color:var(--rose);margin-bottom:1.4rem;line-height:1.1}
+.letter em{font-style:italic;color:var(--gold)}
+.letter .big{font-style:italic;font-weight:300;font-size:clamp(1.8rem,7vw,2.6rem);line-height:1.25;color:var(--gold);text-align:center;margin:2.8rem 0 1.8rem}
+.letter .end{text-align:center;color:var(--rose);font-size:clamp(1.5rem,6vw,1.9rem);margin-bottom:.4rem}
+.letter .sign{text-align:center;font-style:italic;font-size:1.6rem;color:var(--rose);margin-top:.2rem}
+.heart{display:block;text-align:center;font-size:1.7rem;color:var(--rose);margin:1.4rem 0;animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1.2s ease,transform 1.2s ease}
+.rv.in{opacity:1;transform:none}
+.fly{position:fixed;z-index:5;pointer-events:none;color:var(--rose);animation:fly 2.6s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--x),var(--y)) scale(var(--s));opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  #sky i,.clock .c,.heart{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<main id="app">
+  <section class="hero">
+    <div class="moon" aria-hidden="true"></div>
+    <p class="intro">Hii Beautiful,  It’s time to cry with some happy tears.</p>
+    <h1 class="clock" aria-label="11:11">11<span class="c">:</span>11</h1>
+    <button class="wish" id="wish" type="button">Make a wish</button>
+    <p class="hint">Tap it, and read what I wished</p>
+  </section>
+
+  <section class="letter" id="letter" hidden>
+    <p class="to rv">Gauri,</p>
+    <p class="rv">My day starts with the thought of you, and it ends with you. And in between, there is not a single moment when you leave my mind. It feels so good, so deeply satisfying, that it is you in my mind and no one else.</p>
+    <p class="rv">I always imagined that my life would become beautiful once my perfect girl arrived. But I swear to you, the happiness you give me is even more than anything I ever imagined.</p>
+    <p class="rv">This morning I wished you in a very short note. When we first started, I thought, <em>okay, let’s see where this goes.</em> But when I spent time with you, I felt such a deep connection, such intensity, so much happiness, so much chemistry, and a balance between us that I never thought would work out this well.</p>
+    <p class="rv">That is why I am wishing you properly tonight, in detail. Because with every passing moment, my love for you grows many times over. You make me so happy, and I cannot explain or express how much. Even when I say a lot about it, believe me, it is only a small fraction of what I feel for you.</p>
+    <p class="rv">You are the most wonderful person in my life, my Kuchu Puchu.</p>
+    <p class="big rv">You are really my 11:11 wish, and there will always be you in my 11:11 wish.</p>
+    <span class="heart rv" aria-hidden="true">&#9829;</span>
+    <p class="end rv">I love you so much.</p>
+    <p class="sign rv">Your Buddhu</p>
+  </section>
+</main>
+
+<script>
+(function(){
+  var sky=document.getElementById('sky'),app=document.getElementById('app'),letter=document.getElementById('letter');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for(var i=0;i<80;i++){
+    var s=document.createElement('i'),z=Math.random()*2+1;
+    s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+    s.style.width=s.style.height=z+'px';
+    s.style.animationDelay=(Math.random()*5)+'s';
+    s.style.animationDuration=(3+Math.random()*5)+'s';
+    sky.appendChild(s);
+  }
+  function burst(){
+    if(reduce)return;
+    var w=window.innerWidth,h=window.innerHeight;
+    for(var i=0;i<26;i++){
+      var e=document.createElement('span');
+      e.className='fly';e.textContent=i%3?'\u2665':'\u2726';
+      e.style.left=(w/2)+'px';e.style.top=(h*0.55)+'px';
+      e.style.fontSize=(14+Math.random()*20)+'px';
+      var a=Math.random()*Math.PI*2,d=80+Math.random()*Math.min(w,500)*0.6;
+      e.style.setProperty('--x',Math.cos(a)*d+'px');
+      e.style.setProperty('--y',(Math.sin(a)*d-120)+'px');
+      e.style.setProperty('--s',(0.5+Math.random()).toFixed(2));
+      document.body.appendChild(e);
+      setTimeout(function(el){return function(){el.remove()}}(e),2700);
+    }
+  }
+  function reveal(){
+    var items=letter.querySelectorAll('.rv');
+    if(!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('in')});return}
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+    },{threshold:.25});
+    items.forEach(function(el){io.observe(el)});
+  }
+  document.getElementById('wish').addEventListener('click',function(){
+    app.classList.add('granted');
+    letter.hidden=false;
+    burst();
+    reveal();
+    setTimeout(function(){letter.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})},650);
+  });
+})();
+</script>
+</body>
+</html>
