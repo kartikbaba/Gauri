@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Gauri, my 11:11 wish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --night:#0e0a22; --dusk:#2b1a4f; --rose:#f4b8c8; --gold:#f6d99b; --ivory:#fbf3ea; --mist:#b9aedc;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0;min-height:100vh;color:var(--ivory);font-family:var(--sans);
+  background:radial-gradient(120% 80% at 50% 0%,var(--dusk) 0%,var(--night) 62%) fixed,var(--night);
+  overflow-x:hidden;
+}
+#sky{position:fixed;inset:0;pointer-events:none;z-index:0}
+#sky i{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--ivory);opacity:.2;animation:tw 4s ease-in-out infinite}
+@keyframes tw{50%{opacity:.9}}
+main{position:relative;z-index:1}
+.hero{min-height:92vh;min-height:92svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.25rem}
+.intro{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.25rem,4.5vw,1.7rem);color:var(--mist);margin:0 0 .5rem}
+.clock{
+  font-family:var(--serif);font-weight:300;line-height:1;margin:0;
+  font-size:clamp(5.2rem,27vw,13rem);letter-spacing:.02em;
+  color:var(--ivory);text-shadow:0 0 .35em rgba(246,217,155,.25);
+  transition:color 1.2s,text-shadow 1.2s;
+}
+.clock .c{display:inline-block;animation:blink 2.4s ease-in-out infinite;position:relative;top:-.05em}
+@keyframes blink{50%{opacity:.25}}
+.granted .clock{color:var(--gold);text-shadow:0 0 .3em rgba(246,217,155,.7),0 0 1em rgba(244,184,200,.4)}
+.granted .clock .c{animation:none;opacity:1}
+.wish{
+  margin-top:2rem;font:600 1rem var(--sans);color:var(--ivory);background:rgba(244,184,200,.12);
+  border:1px solid var(--rose);border-radius:999px;padding:.95rem 2.2rem;cursor:pointer;min-height:48px;
+  transition:background .3s,transform .2s;
+}
+.wish:hover{background:rgba(244,184,200,.25)}
+.wish:active{transform:scale(.97)}
+.wish:focus-visible,.again:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.granted .wish{display:none}
+.hint{font-size:.9rem;color:var(--mist);margin:1rem 0 0;font-weight:300}
+.granted .hint{display:none}
+.letter{
+  max-width:36rem;margin:0 auto;padding:0 1.5rem 5rem;text-align:center;
+  opacity:0;visibility:hidden;transform:translateY(24px);
+  transition:opacity 1.4s ease .3s,transform 1.4s ease .3s,visibility 0s linear 1.7s;
+  height:0;overflow:hidden;
+}
+.granted .letter{opacity:1;visibility:visible;transform:none;height:auto;overflow:visible;transition:opacity 1.4s ease .3s,transform 1.4s ease .3s}
+.letter h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,9vw,3.6rem);line-height:1.1;margin:0 0 1.5rem;color:var(--rose)}
+.big{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.7rem,6.5vw,2.5rem);line-height:1.25;margin:0 0 1.75rem;color:var(--gold)}
+.letter p.t{font-size:1.1rem;line-height:1.8;font-weight:300;color:var(--ivory);margin:0 0 1.25rem;max-width:30rem;margin-inline:auto}
+.sign{font-family:var(--serif);font-style:italic;font-size:1.6rem;margin:2.2rem 0 0;color:var(--rose)}
+.heart{font-size:1.6rem;margin-top:1.2rem;color:var(--rose);display:inline-block;animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.again{margin-top:2.2rem;background:none;border:0;color:var(--mist);font:300 .95rem var(--sans);text-decoration:underline;cursor:pointer;padding:.75rem;min-height:44px}
+.fly{position:fixed;z-index:5;pointer-events:none;color:var(--rose);animation:fly 2.6s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--x),var(--y)) scale(var(--s));opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  #sky i,.clock .c,.heart{animation:none}
+  .letter,.granted .letter{transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<main id="app">
+  <section class="hero">
+    <p class="intro">Gauri, do you remember making a wish?</p>
+    <h1 class="clock" aria-label="11:11">11<span class="c">:</span>11</h1>
+    <button class="wish" id="wish" type="button">Make a wish</button>
+    <p class="hint">Tap it, and see what happens</p>
+  </section>
+
+  <section class="letter" id="letter" aria-live="polite">
+    <h2>I love you so much, Gauri.</h2>
+    <p class="big">You are my 11:11 wish that came true.</p>
+    <p class="t">I am so happy about it. Thank you for being in my life. You make every ordinary day feel like something I once wished for.</p>
+    <span class="heart" aria-hidden="true">&#9829;</span>
+    <p class="sign">Yours always, Buddhu..</p>
+  </section>
+</main>
+
+<script>
+(function(){
+  var sky=document.getElementById('sky'),app=document.getElementById('app');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for(var i=0;i<70;i++){
+    var s=document.createElement('i');
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*100+'%';
+    var z=Math.random()*2+1;
+    s.style.width=s.style.height=z+'px';
+    s.style.animationDelay=(Math.random()*4)+'s';
+    s.style.animationDuration=(3+Math.random()*4)+'s';
+    sky.appendChild(s);
+  }
+  function burst(){
+    if(reduce)return;
+    var n=26,w=window.innerWidth,h=window.innerHeight;
+    for(var i=0;i<n;i++){
+      var e=document.createElement('span');
+      e.className='fly';
+      e.textContent=i%3?'\u2665':'\u2726';
+      e.style.left=(w/2)+'px';e.style.top=(h*0.55)+'px';
+      e.style.fontSize=(14+Math.random()*20)+'px';
+      var a=Math.random()*Math.PI*2,d=80+Math.random()*Math.min(w,500)*0.6;
+      e.style.setProperty('--x',Math.cos(a)*d+'px');
+      e.style.setProperty('--y',(Math.sin(a)*d-120)+'px');
+      e.style.setProperty('--s',(0.5+Math.random()).toFixed(2));
+      document.body.appendChild(e);
+      setTimeout(function(el){return function(){el.remove()}}(e),2700);
+    }
+  }
+  document.getElementById('wish').addEventListener('click',function(){
+    app.classList.add('granted');
+    burst();
+    setTimeout(function(){
+      document.getElementById('letter').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+    },700);
+  });
+  document.getElementById('again').addEventListener('click',function(){
+    app.classList.remove('granted');
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+  });
+})();
+</script>
+</body>
+</html>
