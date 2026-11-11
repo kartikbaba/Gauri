@@ -114,83 +114,159 @@
     <section aria-label="Your pages">
       <div class="section-head">
         <h2>Your little collection</h2>
-        <span>9 pages · all yours</span>
+        <span id="card-count">10 pages · all yours</span>
       </div>
-      <div class="grid">
-        <a class="card" href="all_the_best.html" style="--accent:#8d8bd8">
-          <div class="card-top"><span class="emoji">🌟</span><span class="date">Thu, Apr 23 · 10:15 PM</span></div>
-          <h3>All the Best</h3>
-          <p class="desc">A little good-luck note to remind you how amazing you are.</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-        </a>
-
-        <a class="card" href="i_love_you_gauri.html" style="--accent:#d96b91">
-          <div class="card-top"><span class="emoji">💌</span><span class="date">Fri, Jun 5 · 1:12 AM</span></div>
-          <h3>I Love You, Gauri</h3>
-          <p class="desc">A soft little reminder of just how much you mean to me.</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-        </a>
-
-        <a class="card" href="missing-me.html" style="--accent:#d58a9f">
-          <div class="card-top"><span class="emoji">🥺</span><span class="date">26 May 2026</span></div>
-          <h3>Missing Me</h3>
-          <p class="desc">For the moments when you wish I were right there beside you.</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-        </a>
-
-        <a class="card" href="for_my_princess.html" style="--accent:#e58aaa">
-          <div class="card-top"><span class="emoji">👑</span><span class="date">9 May</span></div>
-          <h3>For My Princess</h3>
-          <p class="desc">A page made for my favourite girl, my princess Gauri. 🌸</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-        </a>
-
-        <a class="card" href="My11_11.html" style="--accent:#c5a15e">
-          <div class="card-top"><span class="emoji">✨</span><span class="date">Mon, 11 Nov 2026</span></div>
-          <h3>My 11:11 Wish</h3>
-          <p class="desc">A morning wish, with one very special person in it.</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-        </a>
-
-        <a class="card" href="My11_11_night.html" style="--accent:#7888c8">
-          <div class="card-top"><span class="emoji">🌙</span><span class="date">Mon, 11 Nov 2026 · Night</span></div>
-          <h3>My 11:11 Night Wish</h3>
-          <p class="desc">A little midnight magic, and a wish that will always be you.</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-        </a>
-      
-      <a class="card" href="https://kartikbaba.github.io/will-you-be-mine/" target="_blank" rel="noopener noreferrer" style="--accent:#d96b91">
-          <div class="card-top"><span class="emoji">💍</span><span class="date">20 March 2026</span></div>
-          <h3>Will you be Mine</h3>
-          <p class="desc">A little question, with a lot of meaning.</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-      </a>
-
-      <a class="card" href="https://kartikbaba.github.io/See-you-soon/" target="_blank" rel="noopener noreferrer" style="--accent:#d58a9f">
-          <div class="card-top"><span class="emoji">🫶</span><span class="date">29 March 2026</span></div>
-          <h3>See you soon</h3>
-          <p class="desc">For the moments until we meet again.</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-      </a>
-
-      <a class="card" href="https://kartikbaba.github.io/See-you-soon/something-for-you.pdf" target="_blank" rel="noopener noreferrer" style="--accent:#c5a15e">
-          <div class="card-top"><span class="emoji">🎁</span><span class="date">11 April 2026</span></div>
-          <h3>Something for you</h3>
-          <p class="desc">A small surprise, made just for you.</p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-      </a>
-
-        <a class="card" href="agreement.pdf" style="--accent:#7888c8">
-          <div class="card-top"><span class="emoji">❤️</span><span class="date"> 30 March 2026 </span></div>
-          <h3>Our Aggrement</h3>
-          <p class="desc">our first aggrment from our firth meeting </p>
-          <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
-        </a>
-</div>
+      <div class="grid" id="cards-grid">
+        <!-- Cards loaded dynamically from JSON -->
+      </div>
     </section>
 
     <div class="note">“Some things are too lovely to keep in just one message… so I made you a little place for them.” 💗</div>
     <footer>Made with <span>♥</span> · Always yours</footer>
   </main>
+
+  <script>
+    const cardsData = [
+      {
+        "heading": "Will you be Mine",
+        "description": "A little question, with a lot of meaning.",
+        "link": "https://kartikbaba.github.io/will-you-be-mine/",
+        "date": "2026-03-20T00:00:00",
+        "displayDate": "20 March 2026",
+        "emoji": "💍",
+        "accent": "#d96b91",
+        "external": true
+      },
+      {
+        "heading": "See you soon",
+        "description": "For the moments until we meet again.",
+        "link": "https://kartikbaba.github.io/See-you-soon/",
+        "date": "2026-03-29T00:00:00",
+        "displayDate": "29 March 2026",
+        "emoji": "🫶",
+        "accent": "#d58a9f",
+        "external": true
+      },
+      {
+        "heading": "Our Aggrement",
+        "description": "our first aggrment from our firth meeting",
+        "link": "agreement.pdf",
+        "date": "2026-03-30T00:00:00",
+        "displayDate": "30 March 2026",
+        "emoji": "❤️",
+        "accent": "#7888c8",
+        "external": false
+      },
+      {
+        "heading": "Something for you",
+        "description": "A small surprise, made just for you.",
+        "link": "https://kartikbaba.github.io/See-you-soon/something-for-you.pdf",
+        "date": "2026-04-11T00:00:00",
+        "displayDate": "11 April 2026",
+        "emoji": "🎁",
+        "accent": "#c5a15e",
+        "external": true
+      },
+      {
+        "heading": "All the Best",
+        "description": "A little good-luck note to remind you how amazing you are.",
+        "link": "all_the_best.html",
+        "date": "2026-04-23T22:15:00",
+        "displayDate": "Thu, Apr 23 · 10:15 PM",
+        "emoji": "🌟",
+        "accent": "#8d8bd8",
+        "external": false
+      },
+      {
+        "heading": "For My Princess",
+        "description": "A page made for my favourite girl, my princess Gauri. 🌸",
+        "link": "for_my_princess.html",
+        "date": "2026-05-09T00:00:00",
+        "displayDate": "9 May 2026",
+        "emoji": "👑",
+        "accent": "#e58aaa",
+        "external": false
+      },
+      {
+        "heading": "Missing Me",
+        "description": "For the moments when you wish I were right there beside you.",
+        "link": "missing-me.html",
+        "date": "2026-05-26T00:00:00",
+        "displayDate": "26 May 2026",
+        "emoji": "🥺",
+        "accent": "#d58a9f",
+        "external": false
+      },
+      {
+        "heading": "I Love You, Gauri",
+        "description": "A soft little reminder of just how much you mean to me.",
+        "link": "i_love_you_gauri.html",
+        "date": "2026-06-05T01:12:00",
+        "displayDate": "Fri, Jun 5 · 1:12 AM",
+        "emoji": "💌",
+        "accent": "#d96b91",
+        "external": false
+      },
+      {
+        "heading": "Happy Birthday",
+        "description": "A special birthday wish for the most special girl.",
+        "link": "https://kartikbaba.github.io/Happy-Birthday/",
+        "date": "2026-09-11T00:00:00",
+        "displayDate": "11 Sept 2026",
+        "emoji": "🎂",
+        "accent": "#e58aaa",
+        "external": true
+      },
+      {
+        "heading": "My 11:11 Wish",
+        "description": "A morning wish, with one very special person in it.",
+        "link": "My11_11.html",
+        "date": "2026-11-11T11:11:00",
+        "displayDate": "Mon, 11 Nov 2026",
+        "emoji": "✨",
+        "accent": "#c5a15e",
+        "external": false
+      },
+      {
+        "heading": "My 11:11 Night Wish",
+        "description": "A little midnight magic, and a wish that will always be you.",
+        "link": "My11_11_night.html",
+        "date": "2026-11-11T23:11:00",
+        "displayDate": "Mon, 11 Nov 2026 · Night",
+        "emoji": "🌙",
+        "accent": "#7888c8",
+        "external": false
+      }
+    ];
+
+    function renderCards(cards) {
+      // Sort in increasing order of date (earliest to latest)
+      const sortedCards = [...cards].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      const grid = document.getElementById('cards-grid');
+      const countEl = document.getElementById('card-count');
+
+      if (countEl) {
+        countEl.textContent = `${sortedCards.length} pages · all yours`;
+      }
+
+      grid.innerHTML = sortedCards.map(card => {
+        const targetAttr = card.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+        return `
+          <a class="card" href="${card.link}" style="--accent:${card.accent}"${targetAttr}>
+            <div class="card-top">
+              <span class="emoji">${card.emoji}</span>
+              <span class="date">${card.displayDate}</span>
+            </div>
+            <h3>${card.heading}</h3>
+            <p class="desc">${card.description}</p>
+            <span class="open">OPEN THIS PAGE <span class="arrow">↗</span></span>
+          </a>
+        `;
+      }).join('');
+    }
+
+    renderCards(cardsData);
+  </script>
 </body>
 </html>
